@@ -1,11 +1,15 @@
-import React, { useState, useRef } from "react";
-import { usePage } from "@inertiajs/inertia-react";
+import React from 'react';
+
+/**
+ *  I use this page to design components before adding it to my app
+ */
 
 function Test() {
-  return( <div>
+  return (
+    <div>
 
-  </div>
+    </div>
   )
 }
 
-export default Test;
+export default Test

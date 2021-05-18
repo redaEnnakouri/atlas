@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This starter kit provides a minimal and simple starting point for building a Laravel application with authentication. Styled with Tailwind. It also includes [Laravel Fortify](https://laravel.com/docs/8.x/fortify) which publishes authentication controllers and views to your application that can be easily customized based on your own application's needs.
+This starter kit provides a minimal and simple starting point for building a Laravel application with authentication. Styled with Tailwind. It also includes [Laravel Fortify](https://laravel.com/docs/8.x/fortify) which publishes authentication controllers to your application that can be easily customized based on your own application's needs.
 
 This starter is powered by React, Inertia, Tailwind and Laravel.
 

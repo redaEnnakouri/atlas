@@ -14,7 +14,7 @@ function Sidebar({sidebarOpen, setSidebarOpen}) {
             };
             document.addEventListener('click', clickHandler);
             return () => document.removeEventListener('click', clickHandler);
-        });
+        },[sidebarOpen]);
 
         // close if the esc key is pressed
         useEffect(() => {
@@ -24,9 +24,10 @@ function Sidebar({sidebarOpen, setSidebarOpen}) {
             };
             document.addEventListener('keydown', keyHandler);
             return () => document.removeEventListener('keydown', keyHandler);
-        });
+        },[sidebarOpen]);
+
     return (
-        <div className="lg:w-64">
+    <div className="lg:w-64">
       {/* Sidebar backdrop (mobile only) */}
       <div className={`fixed inset-0 bg-gray-900 bg-opacity-30 z-40 lg:hidden lg:z-auto transition-opacity duration-200 ${sidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} aria-hidden="true"></div>
 
@@ -43,7 +44,7 @@ function Sidebar({sidebarOpen, setSidebarOpen}) {
           <button
             ref={trigger}
             className="text-gray-500 lg:hidden hover:text-gray-400"
-            onClick={() => setSidebarOpen(!sidebarOpen)}
+            onClick={() => setSidebarOpen(false)}
             aria-controls="sidebar"
             aria-expanded={sidebarOpen}
           >

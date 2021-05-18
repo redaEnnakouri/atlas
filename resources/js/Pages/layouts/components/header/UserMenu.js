@@ -2,12 +2,13 @@ import React, { useState, useRef, useEffect } from 'react';
 import { InertiaLink, usePage } from '@inertiajs/inertia-react';
 import { Inertia } from '@inertiajs/inertia';
 import { csrfToken } from '@/common/constants';
+import { useDefaultPhoto } from '@/hooks/constants';
 
 function UserMenu() {
         const [dropdownOpen, setDropdownOpen] = useState(false);
-
         const trigger = useRef(null);
         const dropdown = useRef(null);
+
         const auth = usePage().props;
 
         // close on click outside
@@ -18,7 +19,7 @@ function UserMenu() {
             };
             document.addEventListener('click', clickHandler);
             return () => document.removeEventListener('click', clickHandler);
-        });
+        },[dropdownOpen]);
 
         // close if the esc key is pressed
         useEffect(() => {
@@ -28,7 +29,7 @@ function UserMenu() {
             };
             document.addEventListener('keydown', keyHandler);
             return () => document.removeEventListener('keydown', keyHandler);
-        });
+        },[dropdownOpen]);
 
         //log out
         const logout = () => {
@@ -43,10 +44,13 @@ function UserMenu() {
                 ref={trigger}
                 className="inline-flex items-center justify-center group"
                 aria-haspopup="true"
-                onClick={() => setDropdownOpen(!dropdownOpen)}
+                onClick={() => setDropdownOpen(true)}
                 aria-expanded={dropdownOpen}
             >
-                <img className="w-8 h-8 rounded-full" src="https://cdn2.vectorstock.com/i/1000x1000/49/86/man-character-face-avatar-in-glasses-vector-17074986.jpg" width="32" height="32" alt="User" />
+                <img className="w-8 h-8 rounded-full"
+                  src={auth.user.photo_name ? `/storage/profilePhotos/${auth.user.photo_name}` : useDefaultPhoto(auth.user.name)}
+                  width="32" height="32" alt=""
+                />
                 <div className="flex items-center truncate">
                 <span className="ml-2 text-sm font-medium truncate group-hover:text-gray-800">{auth.user.name}</span>
                 <svg className="flex-shrink-0 w-3 h-3 ml-1 text-gray-400 fill-current" viewBox="0 0 12 12">
@@ -60,32 +64,31 @@ function UserMenu() {
                 dropdownOpen &&
                 <section className="origin-top-right z-10 absolute top-full right-0 min-w-44 bg-white border border-gray-200 py-1.5 rounded shadow-lg overflow-hidden mt-1">
                 <div
-                    ref={dropdown}
-                    onFocus={() => setDropdownOpen(true)}
-                    onBlur={() => setDropdownOpen(false)}
+                  ref={dropdown}
+                  onFocus={() => setDropdownOpen(true)}
+                  onBlur={() => setDropdownOpen(false)}
                 >
                 <div className="pt-0.5 pb-2 px-3 mb-1 border-b border-gray-200">
-                    <div className="font-medium text-gray-800">{auth.user.name}</div>
-                    <div className="text-xs italic text-gray-500">{auth.user.email}</div>
+                  <div className="font-medium text-gray-800">{auth.user.name}</div>
+                  <div className="text-xs italic text-gray-500">{auth.user.email}</div>
                 </div>
                 <ul>
-                    <li>
+                  <li>
                     <InertiaLink
-                        className="flex items-center px-3 py-1 text-sm font-medium text-indigo-500 hover:text-indigo-600"
-                        href="#"
-                        onClick={() => setDropdownOpen(!dropdownOpen)}
+                      className="flex items-center px-3 py-1 text-sm font-medium text-indigo-500 hover:text-indigo-600"
+                      href="/profile"
                     >
-                        Settings
+                      Profile
                     </InertiaLink>
-                    </li>
-                    <li>
+                  </li>
+                  <li>
                     <button
-                        className="flex items-center px-3 py-1 text-sm font-medium text-indigo-500 hover:text-indigo-600"
-                        onClick={logout}
+                      className="flex items-center px-3 py-1 text-sm font-medium text-indigo-500 hover:text-indigo-600"
+                      onClick={logout}
                     >
                         Sign Out
                     </button>
-                    </li>
+                  </li>
                 </ul>
                 </div>
                 </section>

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Inertia\Inertia;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +14,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // Inertia::share('errors', function (){
+        //     return session()->get('errors') ? session()->get('errors')->getBag('default')->getMessages() :
+        //     (object) [];
+        // });
     }
 
     /**

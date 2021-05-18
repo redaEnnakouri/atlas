@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import { Inertia } from '@inertiajs/inertia';
-import { InertiaLink } from '@inertiajs/inertia-react';
+import { InertiaLink, usePage } from '@inertiajs/inertia-react';
 import backgroundImage from './assets/images/auth-image.jpg';
+import { keysIn } from 'lodash';
 
 function Register() {
 
@@ -11,6 +12,8 @@ function Register() {
         password: "",
         confirmPassword: "",
       })
+
+    const errors = usePage().props.errors
 
     function handleChange(e) {
         const key = e.target.id;
@@ -45,7 +48,20 @@ function Register() {
 
                     <div className="flex flex-col justify-center px-8 pt-8 my-auto md:justify-start md:pt-0 md:px-24 lg:px-32">
                         <p className="text-3xl text-center">Register.</p>
+
                         <form className="flex flex-col pt-3 md:pt-8" onSubmit={handleSubmit}>
+                          { Object.keys(errors).length > 0 &&
+                            <div>
+                              <div className="font-medium text-red-600">Whoops! Something went wrong.</div>
+                              <ul className="mt-3 text-sm text-red-600 list-disc list-inside">
+                                  {Object.keys(errors).map((key, index) =>
+                                    <li key={index}>
+                                      {errors[key]}
+                                    </li>
+                                  )}
+                              </ul>
+                            </div>
+                          }
                             <div className="flex flex-col pt-4">
                                 <label htmlFor="name" className="text-lg">Name</label>
                                 <input type="text" id="name" placeholder="John Smith"

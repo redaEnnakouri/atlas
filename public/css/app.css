@@ -31868,6 +31868,11 @@ button:focus {
   outline-offset: 2px;
 }
 
+*:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

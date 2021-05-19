@@ -21,9 +21,11 @@ class profileController extends Controller
         if($request->hasFile('photo')){
             $photo = $request->file('photo');
             $filename = auth()->user()->id . '.' . $photo->getClientOriginalExtension();
- /* me */   if($photo->getClientOriginalExtension() !== 'jpg'){
+            if($photo->getClientOriginalExtension() !== 'jpg'){
 
-                return redirect()->route('profile');
+                return inertia('profile/Show', [
+                    'photoMessage' => 'Only upload .jpg files'
+                ]);
              }
 
             $this->deleteOldImage();

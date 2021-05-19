@@ -56,3 +56,18 @@ This starter is powered by React, Inertia, Tailwind and Laravel.
     Inertia::Location(route('login'));
     ```
     Good for those pages that require refresh of sessions, to avoid 419 error (Page Expired).
+
+* Global alias
+    ```bash
+    const path = require('path');
+
+    .webpackConfig({
+        resolve: {
+            alias: {
+                //making a global alias
+                '@': path.resolve('resources/js')
+            },
+        },
+    });
+    ```
+    I made a global alias '@' for absolute path imports.

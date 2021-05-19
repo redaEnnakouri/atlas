@@ -3720,7 +3720,7 @@ function UpdateProfilePhoto() {
 
   var photo = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   var auth = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props;
-  var errors = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.errors;
+  var photoMessage = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.photoMessage;
 
   function selectNewPhoto(e) {
     e.preventDefault();
@@ -3833,9 +3833,9 @@ function UpdateProfilePhoto() {
                   className: "inline-flex items-center px-4 py-2 mt-2 text-xs font-semibold tracking-widest text-gray-700 uppercase transition bg-white border border-gray-300 rounded-md shadow-sm hover:text-gray-500",
                   onClick: deletePhoto,
                   children: "remove photo"
-                }), errors.photo && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                  className: "text-sm text-red-500",
-                  children: errors.photo
+                }), photoMessage && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                  className: "mt-4 text-sm text-red-500",
+                  children: photoMessage
                 })]
               })
             })

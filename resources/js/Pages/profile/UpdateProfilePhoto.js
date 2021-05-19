@@ -7,10 +7,10 @@ function UpdateProfilePhoto() {
   const [photoPreview, setPhotoPreview] = useState(null);
   const photoForm = useRef();
   const [reRender, setReRender] = useState(false);
-  const photo = useRef(null)
+  const photo = useRef(null);
 
-  const auth = usePage().props
-  const errors = usePage().props.errors
+  const auth = usePage().props;
+  const photoMessage = usePage().props.photoMessage;
 
   function selectNewPhoto(e){
     e.preventDefault();
@@ -114,7 +114,7 @@ function UpdateProfilePhoto() {
                       >remove photo
                       </button>
                     }
-                    {errors.photo && <div className="text-sm text-red-500">{errors.photo}</div>}
+                    {photoMessage && <div className="mt-4 text-sm text-red-500">{photoMessage}</div>}
 
                     </div>
                 </div>

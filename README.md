@@ -71,3 +71,13 @@ This starter is powered by React, Inertia, Tailwind and Laravel.
     });
     ```
     I made a global alias '@' for absolute path imports.
+
+## How it looks
+
+![Login Page](docs/login-page.png)
+
+![Home Page](docs/home-page.png)
+
+![Profile Page](docs/profile-page.png)
+
+![Menu Page](docs/menu-page.png)

@@ -1,5 +1,5 @@
 import React from 'react'
-import SectionBorder from '../layouts/partials/SectionBorder'
+import SectionBorder from '@/layouts/partials/SectionBorder'
 import DeleteUserForm from './DeleteUserForm'
 import UpdatePasswordForm from './UpdatePasswordForm'
 import UpdateProfileInformationForm from './UpdateProfileInformationForm'

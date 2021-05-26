@@ -74,7 +74,8 @@ This starter is powered by React, Inertia, Tailwind and Laravel.
 
 ## How it looks
 
-![Login Page](docs/login-page.png)
+<!-- ![Login Page](docs/login-page.png) -->
+<img src='docs/login-page.png' />
 
 ![Home Page](docs/home-page.png)
 

@@ -48,10 +48,13 @@ This starter is powered by React, Inertia, Tailwind and Laravel.
 
 6. php artisan storage:link
 
+<span color="red">redtext</span>
 // To remove the documentation
-7. rm -r docs
+7. rm -r docs  // windows
+   rm -r docs  // linux
 
-8. del readme.md
+8. del readme.md  // windows
+   rm README.md   // linux
 
 ```
 

@@ -47,6 +47,12 @@ This starter is powered by React, Inertia, Tailwind and Laravel.
 5. php artisan key:generate
 
 6. php artisan storage:link
+
+// To remove the documentation
+7. rm -r docs
+
+8. del readme.md
+
 ```
 
 ## Just Reminders 😅
@@ -74,11 +80,10 @@ This starter is powered by React, Inertia, Tailwind and Laravel.
 
 ## How it looks
 
-<!-- ![Login Page](docs/login-page.png) -->
 <img src='docs/login-page.png' />
 
-![Home Page](docs/home-page.png)
+<img src='docs/home-page.png' />
 
-![Profile Page](docs/profile-page.png)
+<img src ='docs/profile-page.png' />
 
-![Menu Page](docs/menu-page.png)
+<img src='docs/menu-page.png' />

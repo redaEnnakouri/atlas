@@ -16,10 +16,6 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/blade', function () {
-    return view('welcome');
-});
-
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),

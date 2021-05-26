@@ -25,7 +25,7 @@ function Login() {
             password: form.password,
         })
       }
-      const { errors } = usePage().props
+      const errors = usePage().props.errors;
     return (
         <div>
             <div className="flex flex-wrap w-full">

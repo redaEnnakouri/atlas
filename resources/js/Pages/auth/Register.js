@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import { Inertia } from '@inertiajs/inertia';
 import { InertiaLink, usePage } from '@inertiajs/inertia-react';
 import backgroundImage from './assets/images/auth-image.jpg';
-import { keysIn } from 'lodash';
 
 function Register() {
 
@@ -13,7 +12,7 @@ function Register() {
         confirmPassword: "",
       })
 
-    const errors = usePage().props.errors
+    const errors = usePage().props.errors;
 
     function handleChange(e) {
         const key = e.target.id;
@@ -31,7 +30,6 @@ function Register() {
             email: form.email,
             password: form.password,
             password_confirmation: form.confirmPassword
-
         })
       }
 

@@ -52,7 +52,7 @@ This starter is powered by React, Inertia, Tailwind and Laravel.
 7. rm -r docs  // windows
    rm -r docs  // linux
 
-8. del readme.md  // windows ![hello](https://via.placeholder.com/15/f03c15/000000?text=+)`ddkdkkdd`
+8. del readme.md  // windows
    rm README.md   // linux
 
 ```

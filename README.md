@@ -35,7 +35,7 @@ This starter is powered by React, Inertia, Tailwind and Laravel.
 * Clone your generated Repo Locally
 * In the Root of your local Repository;
 
-```bash
+```diff
 1. composer install
 
 2. npm install
@@ -48,12 +48,11 @@ This starter is powered by React, Inertia, Tailwind and Laravel.
 
 6. php artisan storage:link
 
-<span color="red">redtext</span>
-// To remove the documentation
++// To remove the documentation
 7. rm -r docs  // windows
    rm -r docs  // linux
 
-8. del readme.md  // windows
+8. del readme.md  // windows https://placehold.it/150/ffffff/ff0000?text=hello
    rm README.md   // linux
 
 ```

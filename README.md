@@ -32,7 +32,7 @@ This starter is powered by React, Inertia, Tailwind and Laravel.
 
 * Click Use as Template up there.
 * Follow the self explanatory Steps.
-* Clone your generated Repo Locally ```bash git clone repo-name folder-name ```
+* Clone your generated Repo Locally ``` git clone repo-name folder-name ```
 * In the Root of your local Repository;
 
 ```bash

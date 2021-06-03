@@ -19,6 +19,7 @@ This starter is powered by React, Inertia, Tailwind and Laravel.
 * Inertia-laravel v0.4.2 
 * Inertia-progress v0.2.4 
 * Tailwindcss v2.1.2 
+* Ziggy v1.2
 
 
 ## Notable Packages

@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { InertiaLink, usePage } from '@inertiajs/inertia-react';
 import { Inertia } from '@inertiajs/inertia';
-import { csrfToken } from '@/common/constants';
 import { useDefaultPhoto } from '@/hooks/constants';
 
 function UserMenu() {
@@ -32,10 +31,9 @@ function UserMenu() {
         },[dropdownOpen]);
 
         //log out
-        const logout = () => {
-            Inertia.post("/logout", {
-                _token: csrfToken,
-            });
+        const logout = (e) => {
+          e.preventDefault();
+          Inertia.post('/logout');
         };
 
     return (
@@ -82,12 +80,14 @@ function UserMenu() {
                     </InertiaLink>
                   </li>
                   <li>
-                    <button
-                      className="flex items-center px-3 py-1 text-sm font-medium text-indigo-500 hover:text-indigo-600"
-                      onClick={logout}
-                    >
+                    <form onSubmit={logout}>
+                      <button
+                        className="flex items-center px-3 py-1 text-sm font-medium text-indigo-500 hover:text-indigo-600"
+                        type="submit"
+                      >
                         Sign Out
-                    </button>
+                      </button>
+                    </form>
                   </li>
                 </ul>
                 </div>
